@@ -1,91 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OMEGA STAR | Recarga de Monedas SuperLive</title>
-<style>
-:root{--bg:#05070d;--card:#0d1220;--blue:#20a7ff;--text:#fff;--muted:#aab4c5;--line:#1c2b43}
-*{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at 50% -10%,#073a68 0,#05070d 42%);color:var(--text)}
-.container{width:min(1100px,92%);margin:auto}.hero{text-align:center;padding:48px 0 28px}
-.logo{font-size:clamp(34px,7vw,64px);font-weight:900;letter-spacing:4px;text-shadow:0 0 24px #149dff}
-.badge{display:inline-block;margin:10px 0;padding:8px 15px;border:1px solid #248fd0;border-radius:999px;color:#8ed6ff;background:#08223a}
-h1{font-size:clamp(25px,5vw,44px);margin:16px 0 10px}.hero p{color:var(--muted);font-size:18px}
-.btn{display:inline-block;text-decoration:none;background:linear-gradient(135deg,#12a5ff,#1768ff);color:#fff;font-weight:800;padding:15px 25px;border-radius:12px;margin:10px 5px;box-shadow:0 8px 30px #007cff35}
-.btn.secondary{background:#111a2b;border:1px solid var(--line)}
-section{padding:28px 0}.section-title{text-align:center;font-size:30px;margin-bottom:20px}
-.features,.prices{display:grid;gap:14px}.features{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
-.feature,.price{background:linear-gradient(145deg,#0e1626,#090e18);border:1px solid var(--line);border-radius:16px;padding:20px}.feature{text-align:center}.icon{font-size:30px}.feature h3{margin:10px 0 6px}.feature p{color:var(--muted);margin:0}
-.prices{grid-template-columns:repeat(auto-fit,minmax(190px,1fr));max-height:none}.price{display:flex;justify-content:space-between;align-items:center}.coins{font-weight:800}.amount{color:#61c4ff;font-weight:900;font-size:18px}
-.payments{text-align:center;color:var(--muted);line-height:2;font-size:17px}.payment{display:inline-block;padding:7px 12px;margin:4px;border:1px solid var(--line);border-radius:9px;background:#0b111d;color:#fff}
-.notice{margin:20px 0;padding:18px;border-radius:14px;background:#081b2d;border:1px solid #15517c;text-align:center}
-footer{text-align:center;color:#748197;padding:35px 0 50px;border-top:1px solid #101a29;margin-top:30px}
-@media(max-width:500px){.hero{padding-top:32px}.price{padding:16px}.btn{width:90%;max-width:320px}}
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<title>OMEGA STAR | Carrito de monedas SuperLive</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header class="hero">
-<div class="container">
-<div class="logo">★ OMEGA STAR</div>
-<div class="badge">REVENDEDOR OFICIAL</div>
-<h1>Recarga tus monedas de SuperLive</h1>
-<p>Compra tus monedas de forma rápida, segura y confiable.</p>
-<a class="btn" href="#precios">VER PRECIOS</a>
-<a class="btn secondary" href="#contacto">CONTACTARNOS</a>
-</div>
+  <div class="brand">★ OMEGA STAR</div>
+  <div class="official">REVENDEDOR OFICIAL</div>
+  <h1>Recarga tus monedas de SuperLive</h1>
+  <p>Compra tus monedas de forma rápida, segura y confiable.</p>
+  <a class="btn" href="#precios">VER PRECIOS</a>
+  <button class="cart-button" id="openCart">🛒 Carrito <span id="cartCount">0</span></button>
 </header>
 
-<main class="container">
-<section>
-<h2 class="section-title">¿Por qué elegir OMEGA STAR?</h2>
-<div class="features">
-<div class="feature"><div class="icon">⚡</div><h3>Recarga rápida</h3><p>Procesamos tus solicitudes con rapidez.</p></div>
-<div class="feature"><div class="icon">🔒</div><h3>Compra segura</h3><p>Atención profesional y proceso confiable.</p></div>
-<div class="feature"><div class="icon">🌎</div><h3>Atención internacional</h3><p>Clientes de diferentes países.</p></div>
-<div class="feature"><div class="icon">🕐</div><h3>Activos 24/7</h3><p>Escríbenos para solicitar tu recarga.</p></div>
-</div>
+<main>
+<section class="benefits">
+  <article><b>⚡ Recarga rápida</b><span>Procesamos tus solicitudes con rapidez.</span></article>
+  <article><b>🔒 Compra segura</b><span>Atención profesional y proceso confiable.</span></article>
+  <article><b>🌎 Atención internacional</b><span>Clientes de diferentes países.</span></article>
+  <article><b>🕐 Activos 24/7</b><span>Escríbenos para solicitar tu recarga.</span></article>
 </section>
 
-<section id="precios">
-<h2 class="section-title">💎 Precios de monedas</h2>
-<div class="prices">
-<div class="price"><span class="coins">120 monedas</span><span class="amount">$1.10</span></div>
-<div class="price"><span class="coins">240 monedas</span><span class="amount">$2.20</span></div>
-<div class="price"><span class="coins">605 monedas</span><span class="amount">$5.50</span></div>
-<div class="price"><span class="coins">1.230 monedas</span><span class="amount">$11</span></div>
-<div class="price"><span class="coins">3.125 monedas</span><span class="amount">$27.50</span></div>
-<div class="price"><span class="coins">6.250 monedas</span><span class="amount">$55</span></div>
-<div class="price"><span class="coins">10.000 monedas</span><span class="amount">$88</span></div>
-<div class="price"><span class="coins">13.800 monedas</span><span class="amount">$110</span></div>
-<div class="price"><span class="coins">20.850 monedas</span><span class="amount">$165</span></div>
-<div class="price"><span class="coins">43.000 monedas</span><span class="amount">$330</span></div>
-<div class="price"><span class="coins">50.050 monedas</span><span class="amount">$385</span></div>
-<div class="price"><span class="coins">71.500 monedas</span><span class="amount">$550</span></div>
-<div class="price"><span class="coins">100.000 monedas</span><span class="amount">$770</span></div>
-<div class="price"><span class="coins">142.500 monedas</span><span class="amount">$1.100</span></div>
-<div class="price"><span class="coins">214.500 monedas</span><span class="amount">$1.650</span></div>
-<div class="price"><span class="coins">287.000 monedas</span><span class="amount">$2.200</span></div>
-<div class="price"><span class="coins">785.000 monedas</span><span class="amount">$5.500</span></div>
-</div>
+<section id="precios" class="section">
+  <div class="section-title">
+    <span>💎</span><h2>Paquetes de monedas</h2>
+  </div>
+  <div id="products" class="products"></div>
 </section>
 
-<section>
-<h2 class="section-title">💳 Métodos de pago</h2>
-<div class="payments">
-<span class="payment">PayPal</span><span class="payment">Nequi</span><span class="payment">Bancolombia</span>
-<span class="payment">Binance</span><span class="payment">Global66</span><span class="payment">Mercado Pago</span>
-<span class="payment">Zelle</span><span class="payment">Cash App</span><span class="payment">Venmo</span>
-<span class="payment">Revolut</span><span class="payment">Lemon</span><span class="payment">Pago Móvil</span><span class="payment">Wise</span>
-</div>
-<div class="notice"><strong>¿Quieres comprar?</strong><br>Indícanos cuántas monedas necesitas, de qué país eres y el método de pago que prefieres.</div>
-</section>
-
-<section id="contacto" style="text-align:center">
-<h2 class="section-title">📲 Solicita tu recarga</h2>
-<p style="color:#aab4c5">Escríbenos directamente por WhatsApp para solicitar tu recarga.</p>
-<a class="btn" href="https://wa.me/573024330121" target="_blank">WHATSAPP</a>
+<section class="section info">
+  <h2>💳 Métodos de pago</h2>
+  <p>PayPal · Nequi · Bancolombia · Binance · Global66 · Mercado Pago · Zelle · Cash App · Venmo · Revolut · Lemon · Pago Móvil · Wise</p>
 </section>
 </main>
+
+<aside id="cartPanel" class="cart-panel" aria-hidden="true">
+  <div class="cart-head"><h2>🛒 Tu pedido</h2><button id="closeCart">✕</button></div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="cart-total"><span>Total</span><strong id="cartTotal">$0.00</strong></div>
+  <button class="checkout" id="checkoutBtn">Finalizar pedido por WhatsApp</button>
+</aside>
+<div id="overlay" class="overlay"></div>
+
+<div id="checkoutModal" class="modal hidden">
+  <div class="modal-card">
+    <button class="modal-close" id="closeModal">✕</button>
+    <h2>📲 Datos del pedido</h2>
+    <p>Completa los datos para enviar tu pedido por WhatsApp.</p>
+    <label>País
+      <select id="country">
+        <option>Colombia</option><option>México</option><option>Argentina</option>
+        <option>Venezuela</option><option>Perú</option><option>Otro país</option>
+      </select>
+    </label>
+    <label>ID / usuario de SuperLive
+      <input id="superliveId" placeholder="Ej. 123456789" autocomplete="off">
+    </label>
+    <label>Método de pago
+      <select id="payment">
+        <option>Nequi</option><option>Bancolombia</option><option>PayPal</option>
+        <option>Binance</option><option>Global66</option><option>Mercado Pago</option>
+        <option>Zelle</option><option>Cash App</option><option>Venmo</option>
+        <option>Revolut</option><option>Lemon</option><option>Pago Móvil</option>
+        <option>Wise</option>
+      </select>
+    </label>
+    <label>Nombre (opcional)
+      <input id="customerName" placeholder="Tu nombre">
+    </label>
+    <label>Nota (opcional)
+      <textarea id="note" rows="3" placeholder="Información adicional"></textarea>
+    </label>
+    <button class="checkout" id="sendWhatsApp">Enviar pedido por WhatsApp</button>
+  </div>
+</div>
+
 <footer>★ OMEGA STAR · Más que recarga, creamos ganadores. Tu diversión, nuestra prioridad.</footer>
+<script src="script.js"></script>
 </body>
 </html>
