@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#02060b">
+<title>OMEGA STAR — Recarga SuperLive</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <button class="icon-btn" id="menuBtn">☰</button>
+    <div class="logo"><span class="star">★</span><div>OMEGA<br><b>STAR</b><small>REVENDEDOR OFICIAL</small></div></div>
+    <button class="cart-btn" id="cartBtn">🛒<span id="cartBadge">0</span></button>
+  </header>
+
+  <section id="homeView" class="view">
+    <div class="hero">
+      <div class="glow"></div>
+      <div class="chest">🧰</div>
+      <h1>RECARGA TUS<br><b>MONEDAS</b><br><span>⚡ DE SUPERLIVE</span></h1>
+      <ul class="features">
+        <li>◉ <b>Recarga<br>Inmediata</b></li>
+        <li>♢ <b>Pago Seguro</b></li>
+        <li>◉ <b>Atención<br>Rápida</b></li>
+        <li>◉ <b>100% Confiable</b></li>
+        <li>◷ <b>Activos 24/7</b></li>
+      </ul>
+    </div>
+
+    <div class="section-title">PAQUETES DE MONEDAS</div>
+    <div class="country-inline">
+      <label>País</label>
+      <select id="countryHome"></select>
+    </div>
+    <div id="homeProducts" class="product-grid"></div>
+
+    <div class="trust-row">
+      <span>♢<small>ENTREGA<br>INMEDIATA</small></span>
+      <span>◷<small>ACTIVOS<br>24/7</small></span>
+      <span>◉<small>SOPORTE<br>RÁPIDO</small></span>
+      <span>♢<small>COMPRA<br>SEGURA</small></span>
+    </div>
+
+    <div class="payments-title">MÉTODOS DE PAGO</div>
+    <div class="payments">
+      <b>PayPal</b><b>Zelle</b><b>Cash App</b><b>Venmo</b>
+      <b>NEQUI</b><b>Bancolombia</b><b>BINANCE</b><b>Mercado Pago</b>
+      <b>Revolut</b><b>Lemon</b><b>pago móvil</b><b>WISE</b>
+    </div>
+    <div class="slogan">MÁS QUE RECARGA, CREAMOS GANADORES<br>TU DIVERSIÓN ES NUESTRA PRIORIDAD <span>★</span></div>
+  </section>
+
+  <section id="packagesView" class="view hidden">
+    <div class="subhead"><button class="back" data-go="home">‹</button><h2>Paquetes</h2><span></span></div>
+    <div class="country-box">
+      <label>País</label><select id="countryPackages"></select>
+      <div class="currency-note">ⓘ Los precios se muestran en <b id="currencyCode"></b> — <span id="currencyName"></span></div>
+    </div>
+    <div id="allProducts" class="list"></div>
+    <div class="local-note">🌐 Al seleccionar otro país verás los precios en su moneda local.</div>
+  </section>
+
+  <section id="cartView" class="view hidden">
+    <div class="subhead"><button class="back" data-go="home">‹</button><h2>Mi Carrito</h2><button class="trash" id="clearCart">♙</button></div>
+    <div id="cartList"></div>
+    <div id="emptyCart" class="empty">Tu carrito está vacío.</div>
+    <div class="cart-total">
+      <div><span>Subtotal</span><b id="subtotal"></b></div>
+      <div><span>Envío</span><b class="green">GRATIS</b></div>
+      <hr><div class="grand"><span>Total</span><b id="total"></b></div>
+    </div>
+    <button class="primary" id="finishCart">Finalizar pedido <span>›</span></button>
+    <button class="continue" data-go="packages">‹ &nbsp; Seguir comprando</button>
+    <div class="cart-trust"><span>♧<b>Compra 100%<br>Segura</b></span><span>◈<b>Entrega<br>Inmediata</b></span><span>♧<b>Soporte<br>24/7</b></span></div>
+    <div class="shield"><div>Tu compra está<br><b>protegida</b><br>con nosotros</div><div class="shield-icon">🛡️</div></div>
+  </section>
+
+  <section id="checkoutView" class="view hidden">
+    <div class="subhead"><button class="back" data-go="cart">‹</button><h2>Finalizar pedido</h2><span></span></div>
+    <div class="steps"><span class="on">1</span><i></i><span>2</span><i></i><span>3</span><div><b>País</b><b>Detalles</b><b>Confirmar</b></div></div>
+    <div id="step1" class="step">
+      <div class="card">
+        <h3>1. Selecciona tu país</h3><p>Elige tu país para ver los precios en tu moneda local.</p>
+        <select id="countryCheckout"></select>
+        <div class="country-list" id="countryList"></div>
+        <div class="info">ⓘ Los precios se actualizarán automáticamente según el país seleccionado.</div>
+      </div>
+      <button class="primary" id="toStep2">Continuar <span>›</span></button>
+    </div>
+    <div id="step2" class="step hidden">
+      <div class="card">
+        <h3>2. Información del pedido</h3>
+        <label>ID de SuperLive<input id="superliveId" placeholder="Ej: 123456789"></label>
+        <small>Ingresa tu ID o usuario de SuperLive</small>
+        <label>Método de pago<select id="payment"></select></label>
+        <small>Elige el método con el que vas a pagar</small>
+        <label>Nombre<input id="name" placeholder="Tu nombre completo"></label>
+        <label>Nota (opcional)<textarea id="note" placeholder="Escribe una nota o información adicional para tu pedido"></textarea></label>
+      </div>
+      <button class="primary" id="toStep3">Continuar <span>›</span></button>
+      <button class="continue" id="backStep1">‹ &nbsp; Volver</button>
+    </div>
+    <div id="step3" class="step hidden">
+      <div class="card">
+        <h3>3. Confirma tu pedido</h3><p>Revisa tu pedido antes de enviarlo.</p>
+        <div class="summary-card" id="customerSummary"></div>
+        <h3>Resumen del pedido</h3>
+        <div id="checkoutItems"></div>
+        <div class="summary-lines"><span>Subtotal <b id="checkoutSubtotal"></b></span><span>Envío <b class="green">GRATIS</b></span><strong>Total <b id="checkoutTotal"></b></strong></div>
+      </div>
+      <button class="whatsapp" id="sendOrder">◉ &nbsp; Enviar pedido por WhatsApp</button>
+      <p class="redirect-note">Serás redirigido a WhatsApp con el detalle de tu pedido para finalizar la compra.</p>
+    </div>
+  </section>
+
+  <nav class="bottom">
+    <button class="active" data-go="home">⌂<small>Inicio</small></button>
+    <button data-go="packages">▦<small>Paquetes</small></button>
+    <button data-go="cart">🛒<small>Carrito</small></button>
+    <button onclick="window.open('https://wa.me/573024330121','_blank')">◉<small>Contacto</small></button>
+  </nav>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
